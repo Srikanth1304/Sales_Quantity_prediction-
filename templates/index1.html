@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Future Quantity Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #f2f2f2;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+	
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Future Quantity Prediction</h1>
+        <form action="/predict" method="post">
+
+	    <select name='region' placeholder='Region Name'>
+        <option selected>region</option>
+<option> ABUDHABI</option>
+<option> BELLARY</option>
+<option> BENGALURE</option>
+<option> BHANDARA</option>
+<option> BHILAI,   DIST DURG</option>
+<option> BHIWADI - DIST ALWAR</option>
+<option> BHIWANDI, THANE</option>
+<option> CHAMARAJPET, BANGALORE</option>
+<option> CHENNAI</option>
+<option> COIMBATORE</option>
+<option> CUTTACK</option>
+<option> ERODE</option>
+<option> ERODE DT,</option>
+<option> GUMMIDIPOONDI</option>
+<option> HINDUPUR</option>
+<option> HINDUPUR MANDAL</option>
+<option> HINDUPURAM</option>
+<option> KOLAR</option>
+<option> KOLKATA</option>
+<option> MIHIJAM</option>
+<option> MUMBAI</option>
+<option> MYSURU (MYSORE)</option>
+<option> NAGPUR (MS)</option>
+<option> NEW DELHI</option>
+<option> PARGI</option>
+<option> PONDICHERRY</option>
+<option> RAIPUR</option>
+<option> ROURKELA</option>
+<option> SALEM</option>
+<option> SOMALWADA - NAGPUR</option>
+<option> SRI KALAHASTHI - CHITTOR</option>
+<option> TIRUVALLUR</option>
+<option> TUMAKURU</option>
+<option> VISAKHAPATNAM</option>
+<option> VIZIANAGARAM</option>
+<option>29160-904 - SERRA / ES / BRAZIL</option>
+<option>ABU DHABI, UAE</option>
+<option>Andhra Pradesh </option>
+<option>Avenida Brigadeiro Eduardo Gomes,Ba</option>
+<option>BANGKOK</option>
+<option>BANGKOK - THAILAND</option>
+<option>BELGIUM</option>
+<option>CANADA T3L 0C9</option>
+<option>Chhattisgarh </option>
+<option>Delhi </option>
+<option>Dubai </option>
+<option>EGYPT</option>
+<option>EGYPT </option>
+<option>GENEVA</option>
+<option>GENOA - ITALY</option>
+<option>GERMANY</option>
+<option>Geneva GE</option>
+<option>Gujarat </option>
+<option>HONG KONG</option>
+<option>Hong Kong Island HK</option>
+<option>ISKENDERUN</option>
+<option>ISRAEL</option>
+<option>ISTANBUL, TURKEY</option>
+<option>ITALY</option>
+<option>JAPAN</option>
+<option>JORDON</option>
+<option>KINGDOM OF BAHRAIN</option>
+<option>KOREA</option>
+<option>KUWAIT</option>
+<option>Karnataka </option>
+<option>Kerala </option>
+<option>LAKE TOWER, DUBAI</option>
+<option>LIMASSOL, CYPRUS</option>
+<option>LONDON</option>
+<option>MACEDONIA</option>
+<option>MEXICO CP</option>
+<option>Maharashtra </option>
+<option>NEW TERRITORIES, HONG KONG</option>
+<option>NEW ZEALAND</option>
+<option>Orissa </option>
+<option>Outside India OI</option>
+<option>Pondicherry </option>
+<option>Rajasthan </option>
+<option>SHARJAH</option>
+<option>SHEUNG WAN, HONG KONG</option>
+<option>SINGAPORE</option>
+<option>SOHAR, SULTANATE OF OMAN</option>
+<option>SWEDEN</option>
+<option>SWITZERLAND</option>
+<option>Schwyz SZ</option>
+<option>Singapore SG</option>
+<option>TAIPEI TAIWAN, ROC</option>
+<option>THAILAND</option>
+<option>TOKYO</option>
+<option>TOKYO - JAPAN</option>
+<option>TOKYO, JAPAN</option>
+<option>TURKEY</option>
+<option>Tamil Nadu </option>
+<option>Telangana </option>
+<option>Thailand</option>
+<option>United Kingdom</option>
+<option>WANHAI HONGKONG</option>
+<option>West Bengal </option>
+</select>
+	    <input type='text'  placeholder='Year'>
+	    <input type='text' name='day' placeholder='Day'>
+	    <input type='text' name='month' placeholder='Month'>
+	    <select name='cus' placeholder='Customer-Material Description'>
+        <option selected>Material</option>
+<option >FERRO MANGANESE 75% - 80%</option>
+<option >FERRO MANGANESE Mn 70% - 75%</option>
+<option >SILICO MANGANESE DOMESTIC</option>
+<option >SILICO MANGANESE EXPORT</option>
+<option >SILICO MANGANESE Mn 60% - 65%</option>
+<option >SILICO MANGANESE Mn 60% to 65% LOW PHOS</option>
+<option >SILICO MANGANESE Mn 65% to 70%</option>
+<option >SILICO MANGANESE Mn 65% to 70% LOW PHOS</option>
+<option >SILICO MANGANESE Mn BELOW 60%</option>
+
+</select>
+
+	
+
+        <!-- <input type='text' name='mat' placeholder='Material Description'> -->
+
+            <input type="submit" value="Predict">
+        </form>
+        <div class='row'>
+	    {% if prediction%}
+	    <h2>{{prediction}}</h2>
+	{% endif %}
+	</div>
+
+   
+
+
+</body>
+</html>
